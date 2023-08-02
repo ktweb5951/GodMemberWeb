@@ -29,8 +29,19 @@
 			<label>내용</label>
 			<span>${notice.noticeContent}</span>
 		</li>
+	</ul>
 		<a href="/notice/list.do">목록으로 이동</a>
-		<a href="#">수정하기</a>
-		<a href="#">삭제하기</a>
+		<a href="/notice/modify.do?noticeNo=${notice.noticeNo}">수정하기</a>
+<!-- 		DELETE FROM NOTICE_TBL WHERE NOTICE_NO = ? -->
+<%-- 		<a href="/notice/delete.do?noticeNo=${notice.noticeNo}">삭제하기</a><br> --%>
+		<a href="javascript:void(0)" onclick="deleteCheck();">삭제하기</a>
+		<script>
+			const deleteCheck= () => {
+				const noticeNo = '${notice.noticeNo}';
+				if(confirm("정말 삭제하시겠습니까?")){
+					location.href ="/notice/delete.do?noticeNo="+noticeNo;
+				}
+			}
+		</script>
 </body>
 </html>
