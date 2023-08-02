@@ -55,11 +55,11 @@ public class LoginController extends HttpServlet {
 			
 			request.setAttribute("msg", "로그인 성공!");
 			request.setAttribute("url", "/index.jsp");
-			request.getRequestDispatcher("/member/serviceSuccess.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceSuccess.jsp").forward(request, response);
 		} else {
 			// 로그인 실패!
 			request.setAttribute("msg", "로그인 실패");
-			request.getRequestDispatcher("/member/serviceFailed.jsp").forward(request, response);;
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);;
 		}
 	}
 

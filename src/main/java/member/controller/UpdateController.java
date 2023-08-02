@@ -65,7 +65,7 @@ public class UpdateController extends HttpServlet {
 		} else {
 			//실패하면 에러페이지
 			request.setAttribute("msg", "회원정보 수정이 완료되지 않았습니다.");
-			RequestDispatcher view = request.getRequestDispatcher("/member/serviceFailed.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/common/serviceFailed.jsp");
 			view.forward(request, response);	
 		}
 	}

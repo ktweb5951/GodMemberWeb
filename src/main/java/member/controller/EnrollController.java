@@ -28,7 +28,7 @@ public class EnrollController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("/WEB-INF/views/member/enroll.jsp").forward(request, response);
 	}
 
 	/**
@@ -56,11 +56,11 @@ public class EnrollController extends HttpServlet {
 			
 			request.setAttribute("msg", "회원가입 성공했어요.");
 			request.setAttribute("url", "/index.jsp");
-			request.getRequestDispatcher("/member/serviceSuccess.jsp").forward(request, response);	
+			request.getRequestDispatcher("/WEB-INF/views/commonserviceSuccess.jsp").forward(request, response);	
 
 		} else {
 			// 실패
-			request.getRequestDispatcher("/member/serviceFailed.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/views/common/serviceFailed.jsp").forward(request, response);
 		}
 	 
 	
